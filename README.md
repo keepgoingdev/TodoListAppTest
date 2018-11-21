@@ -14,5 +14,6 @@ $ npm start
 ```
 
 ## MongoDB Host
-
+```bash
 mongodb://localhost/todolist-test
+```
