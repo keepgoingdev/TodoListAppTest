@@ -40,6 +40,16 @@ $(document).on('click', '.edit', function(e){
     window.location.href = "/tasks_manage/edit_task/"+id;
 });
 
+$(document).on('click', '.status', function(e){
+    e.preventDefault();
+    tasksTestApi.updateTaskStatus($(this).closest('.task').attr('data-id'), ($(this).closest('.task').attr('data-status')=='0')?1:0).done(function(data){
+        console.log(data);
+    }).fail(function(err){
+        console.log(err);
+    }).always(function(){
+    });
+});
+
 function cleanForm(){
     $('#form').trigger("reset");
     if(!$('.form-description').hasClass('hidden')){
