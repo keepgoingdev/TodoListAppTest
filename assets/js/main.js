@@ -33,7 +33,19 @@ window.tasksTestApi = (function () {
                 deferred.reject(jqXHR);
             });
             return deferred.promise();
-        }
+        },
+        deleteTask: function(id){
+            var deferred = new $.Deferred();
+            var jqXHR = $.ajax({
+                url: '/api/tasks/'+id,
+                method: 'delete'
+            }).done(function(data){
+                deferred.resolve(data);
+            }).fail(function(jqXHR, textStatus, errorThrown){
+                deferred.reject(jqXHR);
+            });
+            return deferred.promise();
+        },
     }
     return tasksTestApi;
 }());

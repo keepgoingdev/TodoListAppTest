@@ -3,6 +3,37 @@ $(document).on('click', '#add_task_btn', function(e){
     window.location.href = "/add_task";
 });
 
+$(document).on('click', '.delete', function(e){
+    e.preventDefault();
+    var id = $(this).closest('.task').attr('data-id');
+    $.confirm({
+        title: 'Confirm Delete!',
+        content: 'Please confirm deletion of <b>'+$(this).closest('.task').find('.title').html()+' </b>',
+        buttons: {
+            confirm: {
+                text: 'Yes - Delete',
+                btnClass: 'btn-info',
+                keys: ['enter'],
+                action: function(){
+                    tasksTestApi.deleteTask(id).done(function(data){
+                        console.log(data);
+                    }).fail(function(err){
+                        console.log(err);
+                    }).always(function(){
+                    });
+                }
+            },
+            cancel: {
+                text: 'Cancel',
+                btnClass: 'btn-default',
+                keys: ['enter'],
+                action: function(){
+                }
+            }
+        }
+    });
+});
+
 function cleanForm(){
     $('#form').trigger("reset");
     if(!$('.form-description').hasClass('hidden')){
