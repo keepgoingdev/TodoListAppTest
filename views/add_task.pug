@@ -1,0 +1,18 @@
+extends ./layout
+block append scripts
+    script(src='js/add_task.js')
+block content
+    section#todo
+        div.container
+            div#form-container
+                form#form.form(action="/api/tasks", method='POST')
+                    div.form-group.form-group-title
+                        label(for='task-title') Title
+                        input#task-title.form-control(name="title", type="text", placeholder="Title goese here", aria-describedby="help-task-name")
+                        span#help-task-name.help-block
+                    div.form-group.form-description
+                        label(for='task-descripton') Description
+                        textarea#task-descripton.form-control(name="description", row="3", placeholder="Description goes here", aria-describedby="help-task-description", style="resize:vertical ;")
+                        span#help-task-description.help-block
+                    div.form-group.text-right
+                        button.btn.btn-info(type='submit') add
