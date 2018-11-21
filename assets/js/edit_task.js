@@ -6,6 +6,5 @@ $(document).on('click', '#btn-update', function(e){
     }).fail(function(err){
         console.log(err);
     }).always(function(){
-        console.log(err);
     });
 });

@@ -8,8 +8,6 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var router = express.Router();
 
-var indexRouter = require('../routes/index');
-var tasksRouter = require('../routes/tasks');
 /**
  * Extra Library
  */
@@ -69,8 +67,19 @@ http.listen(process.env.PORT || 3001, process.env.IP || "0.0.0.0", function () {
  * Router
  */
 
-app.use('/', indexRouter);
-app.use('/tasks_manage', tasksRouter);
+app.get('/', function (req, res) {
+    return res.render('index', {})
+})
+app.get('/add_task', function (req, res) {
+    return res.render('add_task', {})
+})
+app.get('/edit_task/:id', function (req, res) {
+    var id = req.params.id;
+    Task.findById(id,function(err, task) {
+        if (err) return res.status(400).json(err);
+        return res.render('edit_task', task)
+    });
+})
 
 /**
  * Api

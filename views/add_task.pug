@@ -1,6 +1,9 @@
 extends ./layout
 block append scripts
-    script(src='js/add_task.js')
+    script(src='../js/main.js')
+    script(src='../js/add_task.js')
+block append scripts
+    link(rel='stylesheet' href='../css/index.css')
 block content
     section#todo
         div.container
