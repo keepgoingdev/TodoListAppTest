@@ -1,0 +1,39 @@
+{
+  "name": "express-pug-todo-list",
+  "version": "1.0.0",
+  "description": "reneszabo/express-pug-todo-list",
+  "license": "WeMTEQ",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/keepgoingdev007/TodoListAppTest.git"
+  },
+  "author": {
+    "name": "Victor",
+    "email": "viktor@realstrategic.com"
+  },
+  "contributors": [],
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "bootstrap-sass": "^3.3.7",
+    "express": "^4.14.0",
+    "method-override": "^2.3.7",
+    "moment": "^2.17.1",
+    "mongodb": "^2.2.22",
+    "mongoose": "^4.8.1",
+    "pug": "^2.0.0-beta6",
+    "random-number": "0.0.7",
+    "socket.io": "^1.7.2"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "express",
+    "expressjs",
+    "jade",
+    "node",
+    "pug"
+  ]
+}
