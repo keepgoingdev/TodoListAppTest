@@ -1,0 +1,16 @@
+extends ./layout
+block append scripts
+    script(src='js/edit_task.js')
+block content
+    section#todo
+        div.container
+            div.form-group.form-group-title
+                label(for='task-title') Title
+                input#task-title.form-control(name="title", type="text", placeholder="Title goese here", aria-describedby="help-task-name", value = title)
+                span#help-task-name.help-block
+            div.form-group.form-description
+                label(for='task-descripton') Description
+                textarea#task-descripton.form-control(name="description", row="3", placeholder="Description goes here", aria-describedby="help-task-description", style="resize:vertical ;" value = description) #{description}
+                span#help-task-description.help-block
+            div.form-group.text-right
+                button#btn-update.btn.btn-info(type='button', data-id = id) Update

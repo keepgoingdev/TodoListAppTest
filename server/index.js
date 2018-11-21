@@ -7,6 +7,9 @@ var app = express();
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var router = express.Router();
+
+var indexRouter = require('../routes/index');
+var tasksRouter = require('../routes/tasks');
 /**
  * Extra Library
  */
@@ -65,13 +68,10 @@ http.listen(process.env.PORT || 3001, process.env.IP || "0.0.0.0", function () {
 /**
  * Router
  */
-app.get('/', function (req, res) {
-    res.render('index', { })
-})
 
-app.get('/add_task', function (req, res) {
-    res.render('add_task', { })
-})
+app.use('/', indexRouter);
+app.use('/tasks_manage', tasksRouter);
+
 /**
  * Api
  */

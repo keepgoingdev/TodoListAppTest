@@ -1,6 +1,6 @@
 $(document).on('click', '#add_task_btn', function(e){
     e.preventDefault();
-    window.location.href = "/add_task";
+    window.location.href = "/tasks_manage/add_task";
 });
 
 $(document).on('click', '.delete', function(e){
@@ -32,6 +32,12 @@ $(document).on('click', '.delete', function(e){
             }
         }
     });
+});
+
+$(document).on('click', '.edit', function(e){
+    e.preventDefault();
+    var id = $(this).closest('.task').attr('data-id');
+    window.location.href = "/tasks_manage/edit_task/"+id;
 });
 
 function cleanForm(){
