@@ -1,0 +1,51 @@
+body {
+    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 18px;
+    line-height: 1.42857;
+    color: #333333;
+    background-color: #fff;
+}
+a {
+    color: #337ab7;
+    text-decoration: none !important;
+    background-color: transparent;
+}
+.navbar-brand {
+    float: left;
+    padding: 12.5px 15px;
+    font-size: 23px;
+    line-height: 25px;
+    height: 50px;
+}
+.navbar-cudddle .navbar-brand {
+    padding: 12.5px 15px;
+    margin-top: 12.5px;
+    margin-bottom: 50px;
+    font-size: 48px;
+    line-height: 50px;
+    height: 50px;
+    color: #222222;
+    font-family: "Josefin Sans", sans-serif;
+}
+.hidden {
+    display: none !important;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.task .col-md-3 a:last-child {
+    margin-left: 35px;
+    display: inline-block;
+}
+.edit{
+    margin-left: 35px;
+    display: inline-block; 
+}
+.task {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}

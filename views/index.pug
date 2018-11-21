@@ -1,0 +1,24 @@
+extends ./layout
+block append scripts
+    script(src='js/home.js')
+block content
+    section#todo
+        div.container
+            div.form-group.text-right
+                button#add_task_btn.btn.btn-info(type='button') Add Task
+            h2.text-primary TO-DO
+            hr
+            div#tasks-container
+            h2.text-primary DONE
+            hr
+            div#tasks-container-done
+    div#templates.hidden
+        div#task.task
+            div.row
+                div.col-md-9
+                    h3.title title of the task
+                    p.description description of the task
+                div.col-md-3.text-right
+                    a.status(href='#status') mark as done
+                    a.edit(href='#edit') edit
+                    a.delete(href='#delete') delete
